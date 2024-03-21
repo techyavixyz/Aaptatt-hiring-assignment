@@ -19,5 +19,5 @@ COPY nginx.conf /etc/nginx/nginx.conf
 # Expose port 80
 EXPOSE 80
 
-# Start Nginx and deploy the application
-CMD ["nginx", "-g", "daemon off;"]
+# Start Your Java Application (adjust this command if necessary)
+CMD ["java", "-jar", "/app/app.war"]
