@@ -17,7 +17,7 @@ RUN rm /etc/nginx/nginx.conf
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # Expose port 80
-EXPOSE 80
+EXPOSE 4567
 
 # Start Your Java Application (adjust this command if necessary)
 CMD ["java", "-jar", "/app/app.war"]
