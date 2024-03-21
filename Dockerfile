@@ -1,8 +1,23 @@
-FROM maven:3.8.3-openjdk-11-slim AS build
-WORKDIR /app
-COPY pom.xml .
-COPY src ./src
-RUN mvn clean package
+# Use an OpenJDK image as the base image
+FROM openjdk:8-jdk-alpine
 
-FROM tomcat:latest
-COPY --from=build /app/target/sparkjava-hello-world-1.0.war /usr/local/tomcat/webapps/ROOT.war
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the packaged WAR file into the container
+COPY target/sparkjava-hello-world-1.0.war /app/app.war
+
+# Install Nginx
+RUN apk update && apk add nginx
+
+# Remove the default Nginx configuration file
+RUN rm /etc/nginx/nginx.conf
+
+# Copy the custom Nginx configuration file
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Expose port 80
+EXPOSE 80
+
+# Start Nginx and deploy the application
+CMD ["nginx", "-g", "daemon off;"]
