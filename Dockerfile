@@ -1,6 +1,5 @@
-FROM tomcat
-
-COPY target/sparkjava-hello-world-1.0.war /usr/local/tomcat/webapps/
+FROM nginx:alpine
+COPY nginx.conf /etc/nginx/nginx.conf
 
 
 
