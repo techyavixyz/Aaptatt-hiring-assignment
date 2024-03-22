@@ -4,7 +4,7 @@ FROM tomcat:latest
 COPY target/sparkjava-hello-world-1.0.war /usr/local/tomcat/webapps/
 
 # Expose the default Tomcat port 
-EXPOSE 8081
+EXPOSE 8080
 
 
 
