@@ -1,5 +1,10 @@
-FROM nginx:alpine
-COPY nginx.conf /etc/nginx/nginx.conf
+FROM tomcat:latest
+
+# Copy your WAR file 
+COPY target/sparkjava-hello-world-1.0.war /usr/local/tomcat/webapps/
+
+# Expose the default Tomcat port 
+EXPOSE 8081
 
 
 
