@@ -5,7 +5,7 @@ public class HelloWorld implements SparkApplication {
 
     @Override
     public void init() {
-         port(8081);
+        port(8081);
         get("/aaptatt", (req, res) -> "Welcome to Aaptatt!!");
     }
 }
