@@ -7,7 +7,8 @@
     <groupId>sparkjava-hello-world</groupId>
     <artifactId>sparkjava-hello-world</artifactId>
     <version>1.0</version>
-    <packaging>war</packaging>
+    <!-- Change packaging to jar -->
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
@@ -24,6 +25,8 @@
 
     <build>
         <plugins>
+            <!-- Remove maven-war-plugin configuration -->
+            <!-- Remove war execution -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
