@@ -3,17 +3,17 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0">
 
-    <servlet>
-        <servlet-name>SparkServlet</servlet-name>
-        <servlet-class>com.sparkjava.servlet.SparkServlet</servlet-class>
-        <init-param>
-            <param-name>applicationClass</param-name>
-            <param-value>HelloWorld</param-value>
-        </init-param>
-    </servlet>
+    <filter>
+        <filter-name>SparkFilter</filter-name>
+        <filter-class>spark.servlet.SparkFilter</filter-class>
+    </filter>
 
-    <servlet-mapping>
-        <servlet-name>SparkServlet</servlet-name>
+    <filter-mapping>
+        <filter-name>SparkFilter</filter-name>
         <url-pattern>/*</url-pattern>
-    </servlet-mapping>
+    </filter-mapping>
+
+    <listener>
+        <listener-class>HelloWorld</listener-class>
+    </listener>
 </web-app>
