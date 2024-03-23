@@ -10,3 +10,12 @@ Steps:
 5. Start Tomcat by running `bin\startup.bat` (or `bin/startaup.sh` for Linux)
 5. Tomcat will automatically deploy the war
 6. Open [http://localhost:8080/sparkjava-hello-world-1.0/aaptatt] in your browser 
+
+
+docker build -t sparkjava-app .
+
+
+docker run -d -p 8081:8080 sparkjava-app
+
+for reverse proxy
+docker run -d -p 80:80 --name nginx-container -v $(pwd)/nginx/default.conf:/etc/nginx/conf.d/default.conf nginx
