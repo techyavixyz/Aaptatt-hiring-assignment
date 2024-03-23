@@ -19,3 +19,8 @@ docker run -d -p 8081:8080 sparkjava-app
 
 for reverse proxy
 docker run -d -p 80:80 --name nginx-container -v $(pwd)/nginx/default.conf:/etc/nginx/conf.d/default.conf nginx
+
+
+If you want to use Jenkins file then you can use but not recommended 
+
+
