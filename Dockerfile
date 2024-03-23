@@ -1,11 +1,12 @@
-FROM tomcat:latest
+ubuntu@ip-172-31-40-227:~/Aaptatt-hiring-assignment$ cat Dockerfile 
+# Use the official Tomcat image as base image
+FROM tomcat:9.0-jdk11
 
-# Copy your WAR file 
-COPY target/sparkjava-hello-world-1.0.war /usr/local/tomcat/webapps/
+# Remove the default ROOT web application
+RUN rm -rf /usr/local/tomcat/webapps/ROOT
 
-# Expose the default Tomcat port 
-EXPOSE 8080
-
+# Copy the WAR file of your SparkJava application to the webapps directory of Tomcat
+COPY target/sparkjava-hello-world-1.0.war /usr/local/tomcat/webapps/sparkjava-hello-world-1.0.war
 
 
 # Use an OpenJDK image as the base image
